@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.hgbrasil.com/finance/quotations?format=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Jul 2017 15:09:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc0683fcd3f71766f631a26e022cde0ef1501168174; expires=Fri, 27-Jul-18
+        15:09:34 GMT; path=/; domain=.hgbrasil.com; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Etag:
+      - W/"5a63ede92c281acd2ecf6cde6b01790c"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4622f375-1a64-4534-847c-30a38b6b2c7d
+      X-Runtime:
+      - '0.007710'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Server:
+      - cloudflare-nginx
+      Cf-Ray:
+      - 3850853f8ad34b21-GRU
+    body:
+      encoding: ASCII-8BIT
+      string: '{"by":"default","valid_key":false,"results":{"currencies":{"source":"BRL","USD":{"name":"Dollar","buy":3.1572,"sell":3.1562,"variation":0.41},"EUR":{"name":"Euro","buy":3.6832,"sell":3.6817,"variation":-0.06},"GBP":{"name":"Pound
+        Sterling","buy":4.1301,"sell":4.1279,"variation":0.27},"ARS":{"name":"Argentine
+        Peso","buy":0.1801,"sell":0.1797,"variation":0.33},"BTC":{"name":"Bitcoin","buy":8547.298,"sell":8533.945,"variation":2.977}},"stocks":{"IBOVESPA":{"name":"BM\u0026F
+        BOVESPA","location":"Sao Paulo, Brazil","variation":1.03},"NASDAQ":{"name":"NASDAQ
+        Stock Market","location":"New York City, United States","variation":0.54},"CAC":{"name":"CAC
+        40","location":"Paris, French","variation":-0.09},"NIKKEI":{"name":"Nikkei
+        225","location":"Tokyo, Japan","variation":0.15}},"available_sources":["BRL"]},"execution_time":0.0,"from_cache":true}'
+    http_version: 
+  recorded_at: Thu, 27 Jul 2017 15:09:34 GMT
+recorded_with: VCR 3.0.3
