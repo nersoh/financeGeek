@@ -1,7 +1,8 @@
 FactoryGirl.define do
   factory :currency do
-    dollar "9.99"
-    euro "9.99"
-    bitcoin "9.99"
+    name "Dollar"
+    buy "2.99"
+    sell "3.99"
+    variation "0.15"
   end
 end
