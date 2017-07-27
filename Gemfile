@@ -36,10 +36,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'vcr'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
