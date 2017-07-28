@@ -1,39 +1,30 @@
 class CurrenciesController < ApplicationController
   def dollar
-    currencies = filtered_currencies(name: 'Dollar')
-
     render json: {
-      type: 'dollar',
-      labels: currencies.map { |currency| currency.created_at_str },
-      datasets: {
-        label: 'Cotação Dólar R$',
-        data: currencies.map { |currency| currency.buy.round(2) }
+      currencies: filtered_currencies(name: 'Dollar'),
+      meta: {
+        type: 'dollar',
+        label: 'Dólar'
       }
     }
   end
 
   def euro
-    currencies = filtered_currencies(name: 'Euro')
-
     render json: {
-      type: 'euro',
-      labels: currencies.map { |currency| currency.created_at_str },
-      datasets: {
-        label: 'Cotação Euro R$',
-        data: currencies.map { |currency| currency.buy.round(2) }
+      currencies: filtered_currencies(name: 'Euro'),
+      meta: {
+        type: 'euro',
+        label: 'Euro'
       }
     }
   end
 
   def bitcoin
-    currencies = filtered_currencies(name: 'Bitcoin')
-
     render json: {
-      type: 'bitcoin',
-      labels: currencies.map { |currency| currency.created_at_str },
-      datasets: {
-        label: 'Cotação Bitcoin R$',
-        data: currencies.map { |currency| currency.buy.round(2) }
+      currencies: filtered_currencies(name: 'Bitcoin'),
+      meta: {
+        type: 'bitcoin',
+        label: 'Bitcoin'
       }
     }
   end

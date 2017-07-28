@@ -4,6 +4,7 @@
     "angular": "latest",
     "angular-route": "latest",
     "bootstrap-sass-official": "latest",
-    "chartjs": "latest"
+    "chartjs": "latest",
+    "moment": "latest"
   }
 }

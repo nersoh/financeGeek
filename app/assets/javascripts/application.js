@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 // require turbolinks
+//= require moment/moment
 //= require chartjs/dist/Chart
 //= require angular/angular
 //= require angular-route/angular-route
