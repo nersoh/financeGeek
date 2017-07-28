@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  get 'currencies/index'
+  # get 'home/index'
+
+  # get 'currencies/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'application#index'
 
-  get 'currencies', to: 'currencies#index'
+  get 'currencies/dollar', to: 'currencies#dollar'
+  get 'currencies/euro', to: 'currencies#euro'
+  get 'currencies/bitcoin', to: 'currencies#bitcoin'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

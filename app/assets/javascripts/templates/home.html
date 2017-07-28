@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="panel header">
+    <div class="panel-heading">
+      <h1>Finance Geek</h1>
+      {{ vm.currencies }}
+    </div>
+    <div class="panel-body">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="currencyType">Moeda</label>
+          <select 
+            class="form-control"
+            name="currencyType"
+            id="currencyType"
+            ng-model="vm.currencyType"
+            ng-change="vm.getCurrencies()"
+          >
+            <option value="Dollar">Dólar</option>
+            <option value="Euro">Euro</option>
+            <option value="Bitcoin">Bitcoin</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="currencyFilter">Filtro</label>
+          <select 
+            class="form-control"
+            name="currencyFilter"
+            id="currencyFilter"
+            ng-model="vm.currencyFilter"
+            ng-change="vm.getCurrencies()"
+          >
+            <option value="last_day">Últimas 24h</option>
+            <option value="last_month">Últimos 30 dias</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <canvas id="myChart" height="200" style="width: 100%"></canvas>
+    </div>
+  </div>
+</div>
