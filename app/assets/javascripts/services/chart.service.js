@@ -6,7 +6,6 @@
 
   function ChartService() {
     function createChart(data, contextElementId) {
-      console.log("call createChart");
       var data = parseData(data);
       var ctx = document.getElementById(contextElementId).getContext('2d');
 
