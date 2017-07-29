@@ -16,6 +16,7 @@
 //= require moment/moment
 //= require chartjs/dist/Chart
 //= require angular/angular
+//= require angular-animate/angular-animate
 //= require angular-route/angular-route
 //= require angular-rails-templates
 // require_tree ./templates

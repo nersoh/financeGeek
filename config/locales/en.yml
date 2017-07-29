@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+
+  controllers:
+    currencies:
+      dollar:
+        label: 'Dólar'
+      euro:
+        label: 'Euro'
+      bitcoin:
+        label: Bitcoin

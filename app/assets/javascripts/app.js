@@ -7,4 +7,4 @@
  * # MainCtrl
  * Controller of the financeGeek
  */
-angular.module('financeGeek', ['templates', 'ngRoute']);
+angular.module('financeGeek', ['ngAnimate', 'ngRoute', 'templates']);

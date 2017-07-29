@@ -12,8 +12,10 @@
     vm.currencyType = 'Dollar';
     vm.currencyFilter = 'last_day';
     vm.currencies = [];
+    vm.loading = false;
 
     vm.getCurrencies = function() {
+      vm.loading = true;
       $http.get(
         '/currencies/' + vm.currencyType.toLowerCase(), 
         { params: { filter: vm.currencyFilter }}
@@ -21,6 +23,9 @@
       .then(function (response) {
         vm.currencies = response.data;
         ChartService.updateChart(vm.chart, response.data);
+      })
+      .finally(function () {
+        vm.loading = false;
       });
     }
 

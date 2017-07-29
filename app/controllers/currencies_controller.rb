@@ -4,7 +4,7 @@ class CurrenciesController < ApplicationController
       currencies: filtered_currencies(name: 'Dollar'),
       meta: {
         type: 'dollar',
-        label: 'Dólar'
+        label: I18n.t('controllers.currencies.dollar.label')
       }
     }
   end
@@ -14,7 +14,7 @@ class CurrenciesController < ApplicationController
       currencies: filtered_currencies(name: 'Euro'),
       meta: {
         type: 'euro',
-        label: 'Euro'
+        label: I18n.t('controllers.currencies.euro.label')
       }
     }
   end
@@ -24,7 +24,7 @@ class CurrenciesController < ApplicationController
       currencies: filtered_currencies(name: 'Bitcoin'),
       meta: {
         type: 'bitcoin',
-        label: 'Bitcoin'
+        label: I18n.t('controllers.currencies.bitcoin.label')
       }
     }
   end
