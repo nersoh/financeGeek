@@ -3,8 +3,14 @@ class Currency < ActiveRecord::Base
 
   scope :last_day, -> { where('created_at >= ?', 1.day.ago) }
   scope :last_month, -> { where('created_at >= ?', 1.month.ago) }
-  scope :daily_newest, -> {
-    select("distinct on (created_date) date_trunc('day', created_at) as created_date, *")
-    .order('created_date, created_at DESC')
+  scope :period, lambda { |period|
+    return last_day if period == 'last_day'
+    return last_month.daily_newest if period == 'last_month'
+  }
+  scope :daily_newest, lambda {
+    select(
+      "distinct on (created_date) date_trunc('day', created_at) \
+      as created_date, *"
+    ).order('created_date, created_at DESC')
   }
 end

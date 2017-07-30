@@ -18,7 +18,7 @@
       vm.loading = true;
       $http.get(
         '/currencies/' + vm.currencyType.toLowerCase(), 
-        { params: { filter: vm.currencyPeriod }}
+        { params: { period: vm.currencyPeriod }}
       )
       .then(function (response) {
         vm.currencies = response.data;

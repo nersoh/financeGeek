@@ -1,7 +1,7 @@
 require 'finance_client'
 
 desc 'Fetch new currencies from API'
-task :fetch_currencies => :environment do
+task fetch_currencies: :environment do
   client = FinanceClient.new
 
   currencies = client.currencies
@@ -11,7 +11,6 @@ task :fetch_currencies => :environment do
   create_currency(currencies['EUR'])
   create_currency(currencies['BTC'])
 end
-
 
 def create_currency(attributes)
   Currency.create!(

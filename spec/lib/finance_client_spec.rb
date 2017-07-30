@@ -5,7 +5,7 @@ RSpec.describe FinanceClient do
   let(:client) { FinanceClient.new }
 
   describe '.new' do
-    xit 'initializes client' do
+    it 'initializes client' do
       expect(client).to be_an_instance_of FinanceClient
     end
   end

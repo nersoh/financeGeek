@@ -1,7 +1,7 @@
 class CurrenciesController < ApplicationController
   def dollar
     render json: {
-      currencies: filtered_currencies(name: 'Dollar'),
+      currencies: Currency.where(name: 'Dollar').period(params['period']),
       meta: {
         type: 'dollar',
         label: I18n.t('controllers.currencies.dollar.label')
@@ -11,7 +11,7 @@ class CurrenciesController < ApplicationController
 
   def euro
     render json: {
-      currencies: filtered_currencies(name: 'Euro'),
+      currencies: Currency.where(name: 'Euro').period(params['period']),
       meta: {
         type: 'euro',
         label: I18n.t('controllers.currencies.euro.label')
@@ -21,20 +21,11 @@ class CurrenciesController < ApplicationController
 
   def bitcoin
     render json: {
-      currencies: filtered_currencies(name: 'Bitcoin'),
+      currencies: Currency.where(name: 'Bitcoin').period(params['period']),
       meta: {
         type: 'bitcoin',
         label: I18n.t('controllers.currencies.bitcoin.label')
       }
     }
-  end
-
-  private
-
-  def filtered_currencies(attributes)
-    return Currency.where(attributes)
-                   .last_month
-                   .daily_newest if params['period'] == 'last_month'
-    Currency.where(attributes).last_day
   end
 end

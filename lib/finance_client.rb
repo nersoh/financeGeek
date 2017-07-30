@@ -1,11 +1,11 @@
+# Client that manage requests from HQBrasil API
 class FinanceClient
-  BASE_URL = "https://api.hgbrasil.com/finance"
+  include HTTParty
 
-  def initialize
-  end
+  base_uri 'https://api.hgbrasil.com/finance'
 
   def currencies
-    response = HTTParty.get("#{BASE_URL}/quotations?format=json")
+    response = self.class.get('/quotations?format=json')
     JSON.parse(response.body)['results']['currencies']
   end
 end
