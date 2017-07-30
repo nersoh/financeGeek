@@ -8,9 +8,11 @@ class Currency < ActiveRecord::Base
     return last_month.daily_newest if period == 'last_month'
   }
   scope :daily_newest, lambda {
+    timezone_offset = Time.zone.now.formatted_offset
     select(
-      "distinct on (created_date) date_trunc('day', created_at) \
-      as created_date, *"
+      "distinct on (created_date) \
+       date_trunc('day', created_at::TIMESTAMPTZ AT TIME ZONE '#{timezone_offset}'::INTERVAL) \
+       as created_date, *"
     ).order('created_date, created_at DESC')
   }
 end
