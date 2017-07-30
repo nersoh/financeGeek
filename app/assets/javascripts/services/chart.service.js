@@ -19,7 +19,8 @@
               data: [],
               backgroundColor: 'rgba(110, 43, 119, 0.2)',
               borderColor: 'rgba(110, 43, 119,1)',
-              borderWidth: 1
+              borderWidth: 1,
+              pointRadius: 5
           }]
         },
         options: {

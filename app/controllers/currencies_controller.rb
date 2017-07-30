@@ -34,7 +34,7 @@ class CurrenciesController < ApplicationController
   def filtered_currencies(attributes)
     return Currency.where(attributes)
                    .last_month
-                   .daily_newest if params['filter'] == 'last_month'
+                   .daily_newest if params['period'] == 'last_month'
     Currency.where(attributes).last_day
   end
 end

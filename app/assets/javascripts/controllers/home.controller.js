@@ -9,8 +9,8 @@
   function HomeController(ChartService, $http) {
     var vm = this;
 
-    vm.currencyType = 'Dollar';
-    vm.currencyFilter = 'last_day';
+    vm.currencyType = 'Bitcoin';
+    vm.currencyPeriod = 'last_day';
     vm.currencies = [];
     vm.loading = false;
 
@@ -18,7 +18,7 @@
       vm.loading = true;
       $http.get(
         '/currencies/' + vm.currencyType.toLowerCase(), 
-        { params: { filter: vm.currencyFilter }}
+        { params: { filter: vm.currencyPeriod }}
       )
       .then(function (response) {
         vm.currencies = response.data;
@@ -32,5 +32,4 @@
     vm.chart = ChartService.createChart({}, 'currencyChart');
     vm.getCurrencies();
   }
-
 })();
