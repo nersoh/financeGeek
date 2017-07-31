@@ -15,12 +15,16 @@ class Currency < ActiveRecord::Base
   }
 
   def self.last_week_variation
-    variation = (last_week.last.buy - last_week.first.buy) / last_week.first.buy * 100
+    first_buy = last_week.first.buy
+    last_buy = last_week.last.buy
+    variation = (last_buy - first_buy) / first_buy * 100
     variation.round(2)
   end
 
   def self.last_month_variation
-    variation = (last_month.last.buy - last_month.first.buy) / last_month.first.buy * 100
+    first_buy = last_month.first.buy
+    last_buy = last_month.last.buy
+    variation = (last_buy - first_buy) / first_buy * 100
     variation.round(2)
   end
 end
