@@ -10,6 +10,7 @@
       var ctx = document.getElementById(contextElementId).getContext('2d');
 
       return new Chart(ctx, {
+        rawData: {},
         type: 'line',
         data: {
           labels: [],
@@ -48,7 +49,13 @@
           tooltips: {
             callbacks: {
               label: function(tooltipItem, data) {
-                return 'Cotação: ' + tooltipItem.yLabel.toFixed(2);
+                return 'Cotação: R$ ' + tooltipItem.yLabel.toFixed(2);
+              },
+              footer: function(tooltipItems, data) {
+                var tooltipItem = tooltipItems[0];
+                return 'Variação: ' + 
+                       this._chart.config.rawData.currencies[tooltipItem.index].variation +
+                       '%';
               }
             }
           }
@@ -59,6 +66,7 @@
     function updateChart(chart, data) {
       // For now created charts support only one dataset, which means
       // one data line per chart
+      chart.config.rawData = data;
       var data = parseData(data);
 
       chart.data.labels = data.labels;
